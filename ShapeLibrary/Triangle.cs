@@ -6,7 +6,7 @@ using System.Numerics;
 
 namespace ShapeLibrary
 {
-    public class Triangle  : Shape2D
+    public class Triangle : Shape2D
     {
         private Vector3 _center;
 
@@ -14,7 +14,7 @@ namespace ShapeLibrary
         {
             get
             {
-                 Vector3 center = new Vector3((_a.X + _b.X + _c.X) / 3f, (_a.Y + _b.Y + _c.Y) / 3f, 0f);
+                Vector3 center = new Vector3((_a.X + _b.X + _c.X) / 3f, (_a.Y + _b.Y + _c.Y) / 3f, 0f);
                 return _center;
             }
         }
@@ -22,11 +22,11 @@ namespace ShapeLibrary
         private Vector2 _a;
         private Vector2 _b;
         private Vector2 _c;
-        
+
         public float Height { get; }
         public float Width { get; }
 
-       
+
 
         public Triangle(Vector3 center, Vector2 a, Vector2 b, Vector2 c)
         {
@@ -34,8 +34,7 @@ namespace ShapeLibrary
             _a = a;
             _b = b;
             _c = c;
-           
-           
+
         }
 
         public override float omkrets
@@ -45,19 +44,22 @@ namespace ShapeLibrary
                 var p1 = Math.Sqrt(Math.Pow(_b.X - _c.X, 2) + Math.Pow(_b.Y - _c.Y, 2));
                 var p2 = Math.Sqrt(Math.Pow(_a.X - _c.X, 2) + Math.Pow(_a.Y - _c.Y, 2));
                 var p3 = Math.Sqrt(Math.Pow(_a.X - _b.X, 2) + Math.Pow(_a.Y - _b.Y, 2));
+
                 return (float)(p1 + p2 + p3);
             }
         }
 
-        public override float area // Behövs fixas
+        public override float area
         {
-            get              
+            get
             {
-                var p1 = Math.Sqrt(Math.Pow(_b.X - _c.X, 2) + Math.Pow(_b.Y - _c.Y, 2));
-                var p2 = Math.Sqrt(Math.Pow(_a.X - _c.X, 2) + Math.Pow(_a.Y - _c.Y, 2));
-                var p3 = Math.Sqrt(Math.Pow(_a.X - _b.X, 2) + Math.Pow(_a.Y - _b.Y, 2));
-                return (float)((p1 + p2) * (p2 + p3) / 2);                
-               
+                var p1 = _a.X * (_b.Y - _c.Y);
+                var p2 = _b.X * (_c.Y - _a.Y);
+                var p3 = _c.X * (_a.Y - _b.Y);
+
+                var a = p1 + p2 + p3;
+                a = MathF.Abs(area) / 2;
+                return a;
             }
         }
 
@@ -65,18 +67,6 @@ namespace ShapeLibrary
         {
             return $"Triangle @({_center.X:0.0}, {_center.Y:0.0}) p1:({_a.X:0.0}, {_a.Y:0.0}), p2:({_b.X:0.0}, {_b.Y:0.0}), p3:({_c.X:0.0}, {_c.Y:0.0})";
         }
-
-
-
-
-
-
-
-         
-
-  
-   
-
 
     }
 }

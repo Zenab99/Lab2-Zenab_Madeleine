@@ -12,14 +12,12 @@ namespace ShapeTester
 
         static void Main(string[] args)
         {
-
+            List<Shape> form = new List<Shape>();
             float area = 0;
             float omkrets = 0;
             float volume = 0;
-            float objekt = 0;
-
-
-            List<Shape> form = new List<Shape>();
+            float objekt = 0;           
+           
 
              for (int i = 0; i < 20; i++)
              {
@@ -58,15 +56,8 @@ namespace ShapeTester
 
 
 
-
-
-
-
-
-
-
             Console.WriteLine("\n"+ $"Genomsnittet av area i listan är {area / form.Count:0.0}");
-             Console.WriteLine($"Den totala omkretsen för alla Trianglar är {omkrets:0.0}");
+            Console.WriteLine($"Den totala omkretsen för alla Trianglar är {omkrets:0.0}");
             Console.WriteLine($"Största objektet är  {objekt} med volymen {volume:0.0}");
 
 

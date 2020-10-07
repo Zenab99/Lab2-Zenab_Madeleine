@@ -37,7 +37,7 @@ namespace ShapeLibrary
             }
         }
 
-        //Cube Con
+        //Cube Constructor
         public Cuboid(Vector3 center, float width) 
         {
             _center = center;
@@ -47,7 +47,7 @@ namespace ShapeLibrary
            
         }
 
-        // Cuboid Con
+        // Cuboid Constructor
         public Cuboid(Vector3 center, Vector3 size) 
         { 
            _center = center;
@@ -74,9 +74,6 @@ namespace ShapeLibrary
 
             }
         }
-
-
-
 
         public override float area
         {

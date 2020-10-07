@@ -8,7 +8,6 @@ namespace ShapeLibrary
 {
     public class Sphere  : Shape3D
     {
-
         private Vector3 _center;
         public float _radius;
         public override Vector3 Center

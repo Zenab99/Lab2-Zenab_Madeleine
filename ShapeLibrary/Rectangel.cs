@@ -35,7 +35,7 @@ namespace ShapeLibrary
             }
         }
 
-        // con rec
+        // constructor rectangel
         public Rectangel(Vector3 center,  Vector2 size)
         {
             _center = center;            
@@ -44,7 +44,7 @@ namespace ShapeLibrary
         }
 
 
-        // con square
+        // constructor square
         public Rectangel(Vector3 center, float width)
         {
             _center = center;
@@ -92,12 +92,6 @@ namespace ShapeLibrary
             }          
 
         }
-
-
-
-
-
-
     }
 
    

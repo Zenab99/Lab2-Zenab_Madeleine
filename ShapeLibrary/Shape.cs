@@ -6,14 +6,8 @@ namespace ShapeLibrary
     public abstract class Shape
     {
         public abstract Vector3 Center { get; }
-
         public abstract float area { get; }
-
         public static Random random = new Random();
-
-
-
-
         public static float Floatrandom() => (float)Math.Round(random.NextDouble() * 10 + 1);
 
         public static Vector3 Vect3random()
@@ -33,11 +27,10 @@ namespace ShapeLibrary
             
              float r = random.Next(0, 7);
             float f = (float)(random.NextDouble() * 10f + 1f);
-            //Vector3 vect3ran() => new Vector3(Floatrandom(), Floatrandom(), Floatrandom());
-
+           
 
             switch (r)
-             {
+            {
                  case 0:
                      return new Circle(new Vector3( Vect2random(), 0), Floatrandom());
                 case 1:

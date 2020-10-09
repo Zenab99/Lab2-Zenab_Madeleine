@@ -9,16 +9,13 @@ namespace ShapeLibrary
     public class Cuboid : Shape3D
     {
         
-        private Vector3 _center { get; }
-        public float _width;
-        public float _height;
-        public float _length;
+        private Vector3 _center { get; }       
         private Vector3 _Size { get; }
         public bool isCube
         {
             get
             {
-                if ((_width == _height || _height == _length))
+                if (_Size.X == _Size.Y && _Size.X == _Size.Z)
                 {
                     return true;
                 }
@@ -29,6 +26,8 @@ namespace ShapeLibrary
             }
         }
 
+      
+
         public override Vector3 Center
         {
             get
@@ -37,13 +36,13 @@ namespace ShapeLibrary
             }
         }
 
+
+
         //Cube Constructor
         public Cuboid(Vector3 center, float width) 
         {
             _center = center;
-            _width = width;
-            _length = width;
-            _height = width;       
+            _Size = new Vector3(width, width, width);            
            
         }
 
@@ -51,10 +50,7 @@ namespace ShapeLibrary
         public Cuboid(Vector3 center, Vector3 size) 
         { 
            _center = center;
-            _Size = new Vector3(size.X, size.Y, size.Z);
-            _width = size.X;
-            _length = size.Y;
-            _height = size.Z;
+            _Size = size;           
 
         }
 
@@ -62,15 +58,8 @@ namespace ShapeLibrary
         public override float volume
         {
             get
-            {
-                if (isCube == true)
-                {
-                    return (_width * _width) * _width; 
-                }
-                else
-                {
-                    return (_Size.X * _Size.Y) *_Size.Z;
-                }
+            {                
+                 return (_Size.X * _Size.Y) *_Size.Z;            
 
             }
         }
@@ -79,14 +68,7 @@ namespace ShapeLibrary
         {
             get
             {
-                if (isCube == true)
-                {
-                    return 6f * _width;
-                }
-                else
-                {
-                    return 2f * (_height * _length) + (_length * _width) + (_width * _height);
-                }
+                return 2F * (_Size.X * _Size.Y + _Size.Y * _Size.Z + _Size.Z * _Size.X);
             }
         }
 
@@ -94,11 +76,11 @@ namespace ShapeLibrary
         {
             if (isCube == true)
             {
-                return $"Cube @({_center.X:0.0}, {_center.Y:0.0}, {_center.Z:0.0}): W= ({_width:0.0}) H= ({_height:0.0}) L= ({_length:0.0})";
+                return $"Cube @({_center.X:0.0}, {_center.Y:0.0}, {_center.Z:0.0}): w = {_Size.X:0.00}, h = {_Size.Y:0.00}, l = {_Size.Z:0.00}";
             }
             else
             {
-                return $"Cuboid @({_center.X:0.0}, {_center.Y:0.0}, {_center.Z:0.0}): W = ({_width:0.0}) H = ({_height:0.0}) L = ({_length:0.0}) ";
+                return $"Cuboid @({_center.X:0.0}, {_center.Y:0.0}, {_center.Z:0.0}):w = {_Size.X:0.00}, h = {_Size.Y:0.00}, l = {_Size.Z:0.00} ";
             }
         }
     }

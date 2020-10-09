@@ -8,8 +8,8 @@ namespace ShapeLibrary
    public class Circle : Shape2D
     {
         private float _radius;
-        private Vector3 _center;
-        public override Vector3 Center
+        private Vector2 _center;
+        public override Vector2 Center2
         {
             get
             {
@@ -18,14 +18,14 @@ namespace ShapeLibrary
         }
 
 
-        public Circle(Vector3 center, float radius)
+        public Circle(Vector2 center, float radius)
         {
             _center = center;
             _radius = radius;
                        
         }
 
-        public override float omkrets
+        public override float Circumference
         {
             get
             {

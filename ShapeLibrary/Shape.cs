@@ -6,6 +6,7 @@ namespace ShapeLibrary
     public abstract class Shape
     {
         public abstract Vector3 Center { get; }
+        public abstract Vector2 Center2 { get; }
         public abstract float area { get; }
         public static Random random = new Random();
         public static float Floatrandom() => (float)Math.Round(random.NextDouble() * 10 + 1);
@@ -32,11 +33,11 @@ namespace ShapeLibrary
             switch (r)
             {
                  case 0:
-                     return new Circle(new Vector3( Vect2random(), 0), Floatrandom());
+                     return new Circle((Vect2random()), Floatrandom());
                 case 1:
-                    return new Rectangel(new Vector3(Vect2random(), 0), Vect2random());
+                    return new Rectangle((Vect2random()), Vect2random());
                   case 2:
-                    return new Rectangel(new Vector3(Vect2random(), 0), Floatrandom()); // Square
+                    return new Rectangle((Vect2random()), Floatrandom()); // Square
                 case 3:
                    return new Triangle(new Vector3(Vect2random(), 0), Vect2random(), Vect2random(), Vect2random());
                  case 4:

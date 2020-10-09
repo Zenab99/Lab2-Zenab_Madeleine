@@ -23,11 +23,7 @@ namespace ShapeLibrary
         private Vector2 _b;
         private Vector2 _c;
 
-        public float Height { get; }
-        public float Width { get; }
-
-
-
+       
         public Triangle(Vector3 center, Vector2 a, Vector2 b, Vector2 c)
         {
             _center = center;
@@ -37,7 +33,7 @@ namespace ShapeLibrary
 
         }
 
-        public override float omkrets
+        public override float Circumference
         {
             get
             {
@@ -57,9 +53,9 @@ namespace ShapeLibrary
                 var p2 = _b.X * (_c.Y - _a.Y);
                 var p3 = _c.X * (_a.Y - _b.Y);
 
-                var a = p1 + p2 + p3;
-                a = MathF.Abs(area) / 2;
-                return a;
+                var Area = p1 + p2 + p3;
+                Area = MathF.Abs(Area) / 2;
+                return Area;
             }
         }
 

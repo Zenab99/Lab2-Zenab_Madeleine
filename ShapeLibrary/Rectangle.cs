@@ -5,11 +5,11 @@ using System.Text;
 
 namespace ShapeLibrary
 {
-    public class Rectangel : Shape2D
+    public class Rectangle : Shape2D
     {
 
         private float _width;
-        private Vector3 _center;
+        private Vector2 _center;
         private Vector2 _size;
         public bool isSquare 
         {
@@ -27,7 +27,8 @@ namespace ShapeLibrary
         }
 
 
-        public override Vector3 Center
+       
+        public override Vector2 Center2
         {
             get
             {
@@ -36,7 +37,7 @@ namespace ShapeLibrary
         }
 
         // constructor rectangel
-        public Rectangel(Vector3 center,  Vector2 size)
+        public Rectangle(Vector2 center,  Vector2 size)
         {
             _center = center;            
             _size = new Vector2(size.X, size.Y);
@@ -45,7 +46,7 @@ namespace ShapeLibrary
 
 
         // constructor square
-        public Rectangel(Vector3 center, float width)
+        public Rectangle(Vector2 center, float width)
         {
             _center = center;
             _width = width;
@@ -55,7 +56,7 @@ namespace ShapeLibrary
         }
 
 
-        public override float omkrets
+        public override float Circumference
         {
             get
             {

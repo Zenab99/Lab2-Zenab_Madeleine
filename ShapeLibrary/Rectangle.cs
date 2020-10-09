@@ -85,11 +85,11 @@ namespace ShapeLibrary
         {
             if(isSquare == true)
             {
-                return $"Square@({_center.X:0.0}, {_center.Y:0.0}) W= {_size.X:0.0}  H= {_size.Y:0.0} A ={area}";
+                return $"Square@({_center.X:0.0}, {_center.Y:0.0}) W= {_size.X:0.0}  H= {_size.Y:0.0}";
             }
             else 
             {
-                return $"Rectangle@({_center.X:0.0}, {_center.Y:0.0}) W= {_size.X:0.0}  H= {_size.Y:0.0} A= {area}";
+                return $"Rectangle@({_center.X:0.0}, {_center.Y:0.0}) W= {_size.X:0.0}  H= {_size.Y:0.0}";
             }          
 
         }

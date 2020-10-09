@@ -26,11 +26,11 @@ namespace ShapeLibrary
         public static Shape GenerateShape()
          {
             
-             float r = random.Next(0, 7);
+            // float r = random.Next(0, 7);
             float f = (float)(random.NextDouble() * 10f + 1f);
 
 
-            switch (r)
+            switch (random.Next(0, 7))
             {
                  case 0:
                      return new Circle((Vect2random()), Floatrandom());

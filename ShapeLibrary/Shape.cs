@@ -28,7 +28,7 @@ namespace ShapeLibrary
             
              float r = random.Next(0, 7);
             float f = (float)(random.NextDouble() * 10f + 1f);
-           
+
 
             switch (r)
             {
@@ -39,7 +39,7 @@ namespace ShapeLibrary
                   case 2:
                     return new Rectangle((Vect2random()), Floatrandom()); // Square
                 case 3:
-                   return new Triangle(new Vector3(Vect2random(), 0), Vect2random(), Vect2random(), Vect2random());
+                   return new Triangle(Vect2random(), Vect2random(), Vect2random());
                  case 4:
                      return new Cuboid(Vect3random(), Floatrandom()); //Cube
                  case 5:

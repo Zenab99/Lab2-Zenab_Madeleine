@@ -13,8 +13,7 @@ namespace ShapeLibrary
         public override Vector3 Center
         {
             get
-            {
-                Vector3 center = new Vector3((_a.X + _b.X + _c.X) / 3f, (_a.Y + _b.Y + _c.Y) / 3f, 0f);
+            {               
                 return _center;
             }
         }
@@ -24,13 +23,15 @@ namespace ShapeLibrary
         private Vector2 _c;
 
        
-        public Triangle(Vector3 center, Vector2 a, Vector2 b, Vector2 c)
+        public Triangle( Vector2 a, Vector2 b, Vector2 c)
         {
-            _center = center;
+          
             _a = a;
             _b = b;
             _c = c;
 
+
+            _center = new Vector3((_a.X + _b.X + _c.X) / 3f, (_a.Y + _b.Y + _c.Y) / 3f, 0f);
         }
 
         public override float Circumference

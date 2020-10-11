@@ -48,8 +48,12 @@ namespace ShapeLibrary
                 case 2:
                     return new Rectangle((c), Floatrandom()); // Square
                 case 3:
-                    var triangle = TC(Vect2random(), Vect2random());
-                    return triangle;
+                    Vector2 p1 = Vect2random();
+                    Vector2 p2 = Vect2random();
+                    float p3X = (3 * center.X) - p1.X - p2.X;
+                    float p3Y = (3 * center.Y) - p1.Y - p2.Y;
+                    Vector2 p3 = new Vector2(p3X, p3Y);
+                     return new Triangle(p1, p2, p3);                   
                 case 4:
                     return new Cuboid(center, Floatrandom()); //Cube
                 case 5:

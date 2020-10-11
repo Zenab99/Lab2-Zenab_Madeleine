@@ -8,8 +8,8 @@ namespace ShapeLibrary
 {
     public class Cuboid : Shape3D
     {
-        
-        private Vector3 _center { get; }       
+
+        private Vector3 _center { get; }
         private Vector3 _Size { get; }
         public bool isCube
         {
@@ -26,8 +26,6 @@ namespace ShapeLibrary
             }
         }
 
-      
-
         public override Vector3 Center
         {
             get
@@ -36,21 +34,19 @@ namespace ShapeLibrary
             }
         }
 
-
-
         //Cube Constructor
-        public Cuboid(Vector3 center, float width) 
+        public Cuboid(Vector3 center, float width)
         {
             _center = center;
-            _Size = new Vector3(width, width, width);            
-           
+            _Size = new Vector3(width, width, width);
+
         }
 
         // Cuboid Constructor
-        public Cuboid(Vector3 center, Vector3 size) 
-        { 
-           _center = center;
-            _Size = size;           
+        public Cuboid(Vector3 center, Vector3 size)
+        {
+            _center = center;
+            _Size = size;
 
         }
 
@@ -58,8 +54,8 @@ namespace ShapeLibrary
         public override float volume
         {
             get
-            {                
-                 return (_Size.X * _Size.Y) *_Size.Z;            
+            {
+                return (_Size.X * _Size.Y) * _Size.Z;
 
             }
         }
@@ -84,5 +80,4 @@ namespace ShapeLibrary
             }
         }
     }
-       
 }
